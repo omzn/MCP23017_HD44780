@@ -126,11 +126,12 @@ int main (int argc, char *argv[])
 #ifdef DEBUG
       fprintf(stderr,"argv: %s -> %c\n",argv[optind],buf[i][j]);
 #endif
-      j++;
       buf[i][j+1] = '\0';
       if (j > 15) {
 	i++;
 	j=0;
+      } else {
+	j++;
       }
     } else {
       if (i == 0) {
@@ -184,7 +185,7 @@ int main (int argc, char *argv[])
 #ifdef DEBUG
     fprintf(stderr,"Wrote: l=%d c=%d r=%d %s\n",lcd,col,row,buf[0]);
 #endif
-    if (i > 0) {
+    if (strlen(buf[1]) > 0) {
       lcdPosition (lcdHandle, col, (row+1)); 
       lcdPuts (lcdHandle, buf[1]) ;
 #ifdef DEBUG
