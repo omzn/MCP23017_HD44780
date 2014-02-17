@@ -59,6 +59,10 @@ int main (int argc, char *argv[])
   int result;
 
   row = col = lcd = 0;
+  buf[0][0]='\0';
+  buf[1][0]='\0';
+  buf[2][0]='\0';
+  buf[3][0]='\0';
 
   while((result=getopt(argc,argv,"l:r:c:s:bCi")) != -1) {
     switch(result){
